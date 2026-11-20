@@ -1,8 +1,15 @@
-# malaysia-business-location-audit
-A Malaysian business location and data quality audit project focused on verifying business listings, evaluating source reliability, identifying information inconsistencies, and assessing location accuracy using evidence-based research.
 # Petaling Jaya Local Business Data Quality Audit
 
 A structured data verification audit evaluating the accuracy of **15 Google Maps business listings** across Petaling Jaya, Selangor (covering restaurants, cafés, pharmacies, clinics, supermarkets, and retail stores) against independent primary and secondary sources.
+
+## Repository Structure
+
+```text
+├── data/
+│   ├── businesses.csv          # Raw baseline data from Google Maps
+│   └── verification_log.csv    # Field-level cross-verification audit
+└── README.md                   # Methodology, summary metrics, and key findings
+```
 
 ## Audit Summary
 
@@ -44,6 +51,16 @@ Across **60 evaluated data fields** (4 fields per business: Name, Category, Addr
 
 ### 3. Name & Category Consistency
 * Business names and categories were largely accurate, with minor variations caused by Maps appending location tags or generic descriptors (e.g., *"Jaya Grocer Shopping Store"*).
+
+## Records Requiring Further Attention
+
+| Business | Field | Reason |
+| :--- | :--- | :--- |
+| B001 | Operating Hours | Source does not establish the complete weekly schedule. |
+| B003 | Operating Hours | Supporting sources disagree about closing times. |
+| B008 | Operating Hours | Only Google Maps evidence is recorded. |
+| B011 | Address | Individual store unit is not confirmed. |
+| B012 | Address | Individual basement unit is not confirmed. |
 
 ## Methodology & Limitations
 * **Sources Used:** Official business websites, verified Facebook/Instagram pages, reservation platforms (Umai), mall directories, and local news reviews (*Malay Mail*, *The Star*, *EatDrinkKL*, *Time Out*).
